@@ -1,35 +1,34 @@
 import { Button } from "@/components/ui/button";
 
-export const Hero = () => {
+export function Hero() {
   return (
-    <div className="relative overflow-hidden bg-white">
-      <div className="mx-auto max-w-7xl">
-        <div className="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
-          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Monitor leerdoelen</span>{" "}
-                <span className="block text-primary xl:inline">eenvoudig en effectief</span>
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+      <div className="container px-4 md:px-6">
+        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+          <div className="flex flex-col justify-center space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary">
+                Leerdoelen Monitor
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                Een intuïtieve tool voor het voortgezet onderwijs om de voortgang van leerlingen inzichtelijk te maken voor zowel docenten als leerlingen.
+              <p className="max-w-[600px] text-gray-500 md:text-xl">
+                Volg de voortgang van je leerlingen op leerdoelen en help ze groeien. Een krachtige tool voor het voortgezet onderwijs.
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <Button className="w-full px-8 py-3 text-lg">
-                    Start nu
-                  </Button>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Button variant="outline" className="w-full px-8 py-3 text-lg">
-                    Meer informatie
-                  </Button>
-                </div>
-              </div>
             </div>
-          </main>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1">
+                Start nu
+              </Button>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src="/lovable-uploads/d7bb4ecd-3770-4f89-8369-1ab7875428ad.png"
+              alt="Leerling Dashboard"
+              className="w-full aspect-auto rounded-lg border border-gray-200 shadow-lg"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
