@@ -7,25 +7,25 @@ export function Features() {
       icon: Users,
       title: "Docenten Dashboard",
       description: "Overzichtelijk dashboard met real-time inzichten in de voortgang van alle leerlingen.",
-      image: "/lovable-uploads/80ce6447-2f5d-49b6-bfd1-cfa4bdfe1d17.png"
+      image: "/lovable-uploads/c2bdd2cd-0390-4a05-a389-d19bd999edb0.png"
     },
     {
       icon: BarChart2,
       title: "Gedetailleerde Voortgang",
       description: "Volg de ontwikkeling per vaardigheid en identificeer verbeterpunten.",
-      image: "/lovable-uploads/1b607ca9-4f63-448f-ad99-c2f66fae86d8.png"
+      image: "/lovable-uploads/b8ef671f-3cb4-41ef-82c7-4b3363c8e67d.png"
     },
     {
       icon: Target,
       title: "Leerdoelen Analyse",
       description: "Stel persoonlijke leerdoelen en monitor de voortgang richting deze doelen.",
-      image: "/lovable-uploads/3ff3caeb-6b08-45a1-ace1-9425ec494909.png"
+      image: "/lovable-uploads/501b644d-12cc-4fd5-a80b-0d1632abc9f3.png"
     },
     {
       icon: BookOpen,
       title: "Individueel Overzicht",
       description: "Gedetailleerd inzicht in de ontwikkeling van elke individuele leerling.",
-      image: "/lovable-uploads/778e38a9-df1c-4ea9-8022-9b8f91c3024d.png"
+      image: "/lovable-uploads/d5ebb3b1-415d-4972-a294-5603e05d6710.png"
     }
   ];
 

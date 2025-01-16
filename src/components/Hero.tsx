@@ -46,7 +46,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-3xl" />
             <div className="relative rounded-2xl border bg-white/50 backdrop-blur-sm shadow-xl">
               <img
-                src="/lovable-uploads/d7bb4ecd-3770-4f89-8369-1ab7875428ad.png"
+                src="/lovable-uploads/0435f3a2-d6ea-407f-8e65-9891c49aceca.png"
                 alt="Dashboard Preview"
                 className="rounded-2xl"
               />

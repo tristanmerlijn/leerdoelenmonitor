@@ -19,7 +19,7 @@ export function Benefits() {
             <div className="relative aspect-video rounded-2xl border bg-white/50 backdrop-blur-sm shadow-xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10" />
               <img
-                src="/lovable-uploads/80ce6447-2f5d-49b6-bfd1-cfa4bdfe1d17.png"
+                src="/lovable-uploads/936ffdb2-0d2b-4c0d-9fc9-76c813f8a8c2.png"
                 alt="Platform Overview"
                 className="object-cover w-full h-full"
               />
