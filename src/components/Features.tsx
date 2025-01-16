@@ -30,9 +30,9 @@ export function Features() {
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
+    <section className="w-full py-12 md:py-16 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
           <div className="space-y-2 max-w-[800px]">
             <div className="flex items-center justify-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -47,23 +47,23 @@ export function Features() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="group relative overflow-hidden transition-all hover:shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <Card key={index} className="group relative overflow-hidden border-0 bg-white shadow-md hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-xl">
                   <feature.icon className="h-5 w-5 text-primary" />
                   {feature.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3">
                 <p className="text-gray-500">{feature.description}</p>
-                <div className="relative rounded-lg overflow-hidden border bg-white/50">
+                <div className="relative rounded-lg overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full rounded-lg transition-transform group-hover:scale-105"
+                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </CardContent>
