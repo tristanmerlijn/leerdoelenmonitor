@@ -7,7 +7,7 @@ export function Features() {
       icon: Users,
       title: "Leerlingendashboard",
       description: "Overzichtelijk dashboard met real-time inzichten in de voortgang van alle leerlingen.",
-      image: "/lovable-uploads/71e48a55-967a-4797-8ed8-a0eb3ffd6711.png"
+      image: "/lovable-uploads/e7a547eb-b759-4e8a-b613-fe70d3bab0f0.png"
     },
     {
       icon: BarChart2,
@@ -23,9 +23,9 @@ export function Features() {
     },
     {
       icon: BookOpen,
-      title: "Individueel overzicht",
+      title: "Voortgang op leerdoelen",
       description: "Gedetailleerd inzicht in de ontwikkeling van elke individuele leerling.",
-      image: "/lovable-uploads/d5ebb3b1-415d-4972-a294-5603e05d6710.png"
+      image: "/lovable-uploads/a7d5a3d9-bf23-4ff0-80c0-72530af78090.png"
     }
   ];
 
