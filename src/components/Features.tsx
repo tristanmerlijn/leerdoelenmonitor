@@ -5,25 +5,25 @@ export function Features() {
   const features = [
     {
       icon: Users,
-      title: "Docenten Dashboard",
+      title: "Leerlingendashboard",
       description: "Overzichtelijk dashboard met real-time inzichten in de voortgang van alle leerlingen.",
-      image: "/lovable-uploads/c2bdd2cd-0390-4a05-a389-d19bd999edb0.png"
+      image: "/lovable-uploads/71e48a55-967a-4797-8ed8-a0eb3ffd6711.png"
     },
     {
       icon: BarChart2,
-      title: "Gedetailleerde Voortgang",
+      title: "Getailleerde voortgang",
       description: "Volg de ontwikkeling per vaardigheid en identificeer verbeterpunten.",
       image: "/lovable-uploads/b8ef671f-3cb4-41ef-82c7-4b3363c8e67d.png"
     },
     {
       icon: Target,
-      title: "Leerdoelen Analyse",
+      title: "Leerdoelen analyse",
       description: "Stel persoonlijke leerdoelen en monitor de voortgang richting deze doelen.",
       image: "/lovable-uploads/501b644d-12cc-4fd5-a80b-0d1632abc9f3.png"
     },
     {
       icon: BookOpen,
-      title: "Individueel Overzicht",
+      title: "Individueel overzicht",
       description: "Gedetailleerd inzicht in de ontwikkeling van elke individuele leerling.",
       image: "/lovable-uploads/d5ebb3b1-415d-4972-a294-5603e05d6710.png"
     }
