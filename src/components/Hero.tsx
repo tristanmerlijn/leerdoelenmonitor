@@ -20,12 +20,13 @@ export function Hero() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group">
-                Start gratis demo
+              <Button 
+                size="lg" 
+                className="group"
+                onClick={() => window.open('https://leerdoelenmonitor.nl/teacher', '_blank')}
+              >
+                Registreer als docent
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Bekijk features
               </Button>
             </div>
             <div className="flex items-center gap-4 text-sm">
