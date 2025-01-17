@@ -63,7 +63,8 @@ export function Features() {
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    className="w-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    style={{ height: '400px' }}
                   />
                 </div>
               </CardContent>
