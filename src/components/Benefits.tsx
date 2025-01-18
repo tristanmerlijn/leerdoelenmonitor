@@ -7,7 +7,8 @@ export function Benefits() {
     "Automatische voortgangsrapporten",
     "Intuïtieve dashboards",
     "Data-gedreven inzichten",
-    "Eenvoudige implementatie"
+    "Eenvoudige implementatie",
+    "Tool voor gesprekken met leerlingen over leerdoelen"
   ];
 
   return (

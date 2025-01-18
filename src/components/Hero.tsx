@@ -25,7 +25,7 @@ export function Hero() {
                 className="group"
                 onClick={() => window.open('https://leerdoelenmonitor.nl/teacher', '_blank')}
               >
-                Registreer als docent
+                Registreer als docent op: https://leerdoelenmonitor.nl/teacher
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
