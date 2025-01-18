@@ -8,7 +8,8 @@ export function Benefits() {
     "Intuïtieve dashboards",
     "Data-gedreven inzichten",
     "Eenvoudige implementatie",
-    "Tool voor gesprekken met leerlingen over leerdoelen"
+    "Hulpmiddel bij gesprekken over leerdoelen",
+    "Feedback geven per leerdoel"
   ];
 
   return (
