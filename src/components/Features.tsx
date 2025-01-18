@@ -12,7 +12,7 @@ export function Features() {
     {
       icon: BarChart2,
       title: "Getailleerde voortgang",
-      description: "Volg de ontwikkeling per vaardigheid en identificeer verbeterpunten.",
+      description: "Volg de ontwikkeling per leerdoel en identificeer verbeterpunten.",
       image: "/lovable-uploads/b8ef671f-3cb4-41ef-82c7-4b3363c8e67d.png"
     },
     {
