@@ -1,8 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Users, BarChart2, Target, CheckCircle2 } from "lucide-react";
+import { BookOpen, Users, BarChart2, Target, CheckCircle2, LucideIcon } from "lucide-react";
+
+interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  image: string;
+}
 
 export function Features() {
-  const features = [
+  const features: Feature[] = [
     {
       icon: Users,
       title: "Leerlingendashboard",
