@@ -1,20 +1,13 @@
-import { BarChart2, Users2, LineChart, Target } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
-interface Feature {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  image: string;
-}
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, Users, BarChart2, Target, CheckCircle2 } from "lucide-react";
 
 export function Features() {
-  const features: Feature[] = [
+  const features = [
     {
-      icon: Target,
-      title: "Persoonlijke leerdoelen",
-      description: "Stel individuele leerdoelen op en volg de voortgang.",
-      image: "/lovable-uploads/71e48a55-967a-4797-8ed8-a0eb3ffd6711.png"
+      icon: Users,
+      title: "Leerlingendashboard",
+      description: "Overzichtelijk dashboard met real-time inzichten in de voortgang van alle leerlingen.",
+      image: "/lovable-uploads/e7a547eb-b759-4e8a-b613-fe70d3bab0f0.png"
     },
     {
       icon: BarChart2,
@@ -23,58 +16,59 @@ export function Features() {
       image: "/lovable-uploads/b8ef671f-3cb4-41ef-82c7-4b3363c8e67d.png"
     },
     {
-      icon: Users2,
-      title: "Groepsoverzicht",
-      description: "Bekijk de voortgang van de hele klas in één oogopslag.",
-      image: "/lovable-uploads/80ce6447-2f5d-49b6-bfd1-cfa4bdfe1d17.png"
+      icon: Target,
+      title: "Leerdoelen analyse",
+      description: "Stel persoonlijke leerdoelen en monitor de voortgang richting deze doelen.",
+      image: "/lovable-uploads/501b644d-12cc-4fd5-a80b-0d1632abc9f3.png"
     },
     {
-      icon: LineChart,
-      title: "Data-gedreven inzichten",
-      description: "Krijg waardevolle inzichten op basis van verzamelde data.",
-      image: "/lovable-uploads/778e38a9-df1c-4ea9-8022-9b8f91c3024d.png"
+      icon: BookOpen,
+      title: "Voortgang op leerdoelen",
+      description: "Gedetailleerd inzicht in de ontwikkeling van elke individuele leerling.",
+      image: "/lovable-uploads/a7d5a3d9-bf23-4ff0-80c0-72530af78090.png"
     }
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section className="w-full py-12 md:py-16 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Belangrijkste functies
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
+          <div className="space-y-2 max-w-[800px]">
+            <div className="flex items-center justify-center gap-2">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <h4 className="text-primary font-medium">Krachtige Features</h4>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+              Alles wat je nodig hebt voor effectief onderwijs
             </h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Ontdek hoe onze tool je helpt bij het monitoren en begeleiden van leerdoelen
+            <p className="text-gray-500 md:text-lg">
+              Ontdek hoe onze tool het leerproces inzichtelijk en effectief maakt met deze essentiële functies
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-10">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={index} className="relative overflow-hidden rounded-lg border bg-white p-2">
-                <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <Icon className="h-6 w-6" />
-                      <h3 className="font-bold">{feature.title}</h3>
-                    </div>
-                    <p className="text-sm text-gray-500">{feature.description}</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="relative h-[120px] overflow-hidden rounded-md">
-                      <img
-                        alt={feature.title}
-                        className="object-cover w-full h-full"
-                        src={feature.image}
-                      />
-                    </div>
-                  </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+          {features.map((feature, index) => (
+            <Card key={index} className="group relative overflow-hidden border-0 bg-white shadow-md hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-xl">
+                  <feature.icon className="h-5 w-5 text-primary" />
+                  {feature.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-gray-500">{feature.description}</p>
+                <div className="relative rounded-lg overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-              </div>
-            );
-          })}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
