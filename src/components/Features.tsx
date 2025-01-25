@@ -37,40 +37,42 @@ export function Features() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-16 bg-gray-50">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
-          <div className="space-y-2 max-w-[800px]">
-            <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="space-y-3 max-w-[800px]">
+            <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/10 px-4 py-1.5">
               <CheckCircle2 className="h-5 w-5 text-primary" />
-              <h4 className="text-primary font-medium">Krachtige Features</h4>
+              <span className="text-sm font-medium text-primary">Krachtige Features</span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight lg:text-5xl/tight">
               Alles wat je nodig hebt voor effectief onderwijs
             </h2>
-            <p className="text-gray-500 md:text-lg">
+            <p className="text-gray-500 md:text-lg lg:text-xl max-w-[600px] mx-auto">
               Ontdek hoe onze tool het leerproces inzichtelijk en effectief maakt met deze essentiële functies
             </p>
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           {features.map((feature, index) => (
-            <Card key={index} className="group relative overflow-hidden border-0 bg-white shadow-md hover:shadow-lg transition-all duration-300">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-2 text-xl">
-                  <feature.icon className="h-5 w-5 text-primary" />
+            <Card key={index} className="group relative overflow-hidden border-0 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader className="pb-4 pt-6">
+                <CardTitle className="flex items-center gap-3 text-xl lg:text-2xl">
+                  <div className="rounded-full bg-primary/10 p-2">
+                    <feature.icon className="h-6 w-6 text-primary" />
+                  </div>
                   {feature.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-gray-500">{feature.description}</p>
-                <div className="relative rounded-lg overflow-hidden">
+              <CardContent className="space-y-4">
+                <p className="text-gray-600 text-lg">{feature.description}</p>
+                <div className="relative rounded-xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-[300px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               </CardContent>
