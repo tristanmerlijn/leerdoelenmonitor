@@ -1,7 +1,11 @@
 
 import { Check } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
+
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
 
 export function Benefits() {
   const containerRef = useRef(null);
@@ -14,6 +18,12 @@ export function Benefits() {
   const imageY = useTransform(scrollYProgress, [0, 1], [100, -50]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6], [0, 1, 1]);
   const textY = useTransform(scrollYProgress, [0, 0.3, 0.6], [50, 0, 0]);
+  
+  // New scroll-based transformations
+  const rotation = useTransform(scrollYProgress, [0, 0.5, 1], [0, 5, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.05, 1]);
+  const decorX = useParallax(scrollYProgress, 100);
+  const decorY = useParallax(scrollYProgress, 50);
   
   const benefits = [
     "Real-time voortgangsmonitoring",
@@ -48,20 +58,50 @@ export function Benefits() {
 
   return (
     <section ref={containerRef} className="w-full py-16 md:py-24 bg-white relative overflow-hidden">
-      {/* Decorative elements that move on scroll */}
+      {/* Parallax decorative elements with enhanced motion */}
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
+        style={{ 
+          y: useTransform(scrollYProgress, [0, 1], [0, -100]),
+          x: decorX,
+          rotate: useTransform(scrollYProgress, [0, 1], [-5, 5]) 
+        }}
         className="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
       />
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
+        style={{ 
+          y: useTransform(scrollYProgress, [0, 1], [0, 100]),
+          x: useTransform(scrollYProgress, [0, 0.5, 1], [0, -30, 0]),
+          scale: useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.2, 1])
+        }}
         className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+      />
+      
+      {/* Additional floating elements that react to scroll */}
+      <motion.div
+        style={{ 
+          y: decorY,
+          opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
+        }}
+        className="absolute top-1/4 right-1/4 w-32 h-32 bg-yellow-100/20 rounded-full blur-xl hidden lg:block"
+      />
+      
+      <motion.div
+        style={{ 
+          y: useTransform(scrollYProgress, [0, 1], [50, -50]),
+          x: useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]),
+          opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
+        }}
+        className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-green-100/20 rounded-full blur-xl hidden lg:block"
       />
       
       <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <motion.div 
-            style={{ y: imageY }}
+            style={{ 
+              y: imageY,
+              rotate: rotation,
+              scale: scale
+            }}
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl blur-2xl" />
@@ -120,6 +160,15 @@ export function Benefits() {
                   <motion.div 
                     whileHover={{ scale: 1.2, backgroundColor: 'rgba(37, 99, 235, 0.2)' }}
                     className="rounded-full bg-primary/10 p-1"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                      transition: {
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        delay: index * 0.2
+                      }
+                    }}
                   >
                     <Check className="h-4 w-4 text-primary" />
                   </motion.div>
