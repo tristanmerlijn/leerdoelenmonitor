@@ -95,28 +95,19 @@ export function Hero() {
             </motion.div>
           </motion.div>
           <motion.div 
-            style={{ scale, y }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-3xl" />
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="relative rounded-2xl border bg-white/50 backdrop-blur-sm shadow-xl overflow-hidden"
-            >
-              <motion.img
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.7 }}
+            <div className="relative rounded-2xl border bg-white/50 backdrop-blur-sm shadow-xl overflow-hidden">
+              <img
                 src="/lovable-uploads/0435f3a2-d6ea-407f-8e65-9891c49aceca.png"
                 alt="Dashboard Preview"
-                className="rounded-2xl"
+                className="rounded-2xl w-full h-auto"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.div>
