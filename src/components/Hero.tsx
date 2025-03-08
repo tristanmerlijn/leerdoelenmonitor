@@ -13,25 +13,24 @@ export function Hero() {
   
   // Create scroll-driven animations
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   return (
-    <section ref={targetRef} className="relative overflow-hidden bg-white min-h-[90vh] flex items-center">
+    <section ref={targetRef} className="relative overflow-hidden bg-white min-h-[80vh] flex items-center">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white pointer-events-none" />
       
       <motion.div 
         style={{ opacity }}
-        className="container relative px-4 py-16 md:px-6 md:py-24 lg:py-32 z-10"
+        className="container relative px-4 py-10 md:px-6 md:py-16 z-10"
       >
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="space-y-4">
+            <div className="space-y-3">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -44,7 +43,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-primary"
+                className="text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none text-primary"
               >
                 Inzicht in leergroei
               </motion.h1>
@@ -52,7 +51,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5 }}
-                className="text-lg text-gray-600 md:text-xl max-w-[600px]"
+                className="text-base text-gray-600 md:text-lg max-w-[600px]"
               >
                 Volg en begeleid de ontwikkeling van je leerlingen met onze innovatieve leerdoelen monitor. Ontworpen voor het moderne onderwijs.
               </motion.p>
@@ -61,7 +60,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3"
             >
               <Button 
                 size="lg" 
@@ -76,7 +75,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="flex items-center gap-4 text-sm"
+              className="flex items-center gap-3 text-sm"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
@@ -85,7 +84,7 @@ export function Hero() {
                     initial={{ x: -10 * i, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.7 + (i * 0.1) }}
-                    className="inline-block h-8 w-8 rounded-full border-2 border-white bg-gray-100"
+                    className="inline-block h-7 w-7 rounded-full border-2 border-white bg-gray-100"
                   />
                 ))}
               </div>
@@ -115,11 +114,11 @@ export function Hero() {
       {/* Parallax background elements */}
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -150]) }}
-        className="absolute top-20 right-[10%] w-64 h-64 rounded-full bg-blue-200/20 blur-3xl"
+        className="absolute top-20 right-[10%] w-48 h-48 rounded-full bg-blue-200/20 blur-3xl"
       />
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
-        className="absolute bottom-20 left-[15%] w-72 h-72 rounded-full bg-purple-200/20 blur-3xl"
+        className="absolute bottom-20 left-[15%] w-56 h-56 rounded-full bg-purple-200/20 blur-3xl"
       />
     </section>
   );

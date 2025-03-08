@@ -78,16 +78,16 @@ export function Features() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section className="w-full py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container px-4 md:px-6">
         <motion.div 
           ref={titleRef}
           initial={{ opacity: 0, y: 30 }}
           animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          className="flex flex-col items-center justify-center space-y-3 text-center mb-8"
         >
-          <div className="space-y-3 max-w-[800px]">
+          <div className="space-y-2 max-w-[800px]">
             <div className="inline-flex items-center justify-center gap-2 rounded-full bg-primary/10 px-4 py-1.5">
               <motion.div
                 initial={{ rotate: -5, scale: 0.9 }}
@@ -98,10 +98,10 @@ export function Features() {
               </motion.div>
               <span className="text-sm font-medium text-primary">Krachtige Features</span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight lg:text-5xl/tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700">
+            <h2 className="text-2xl font-bold tracking-tighter md:text-3xl/tight lg:text-4xl/tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-700">
               Alles wat je nodig hebt voor effectief onderwijs
             </h2>
-            <p className="text-gray-500 md:text-lg lg:text-xl max-w-[600px] mx-auto">
+            <p className="text-gray-500 md:text-base lg:text-lg max-w-[600px] mx-auto">
               Ontdek hoe onze tool het leerproces inzichtelijk en effectief maakt met deze essentiële functies
             </p>
           </div>
@@ -112,7 +112,7 @@ export function Features() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-8 md:grid-cols-2 lg:gap-12"
+          className="grid gap-6 md:grid-cols-2 lg:gap-8"
         >
           {features.map((feature, index) => (
             <motion.div 
@@ -124,27 +124,27 @@ export function Features() {
                 perspective: "1000px"
               }}
               whileHover={{ 
-                y: -10,
+                y: -5,
                 transition: { duration: 0.3 }
               }}
             >
               <Card className="group relative overflow-hidden border-0 bg-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl h-full">
-                <CardHeader className="pb-4 pt-6">
-                  <CardTitle className="flex items-center gap-3 text-xl lg:text-2xl">
+                <CardHeader className="pb-2 pt-4">
+                  <CardTitle className="flex items-center gap-2 text-lg lg:text-xl">
                     <motion.div 
-                      className="rounded-full bg-primary/10 p-2 group-hover:bg-primary/20 transition-colors duration-300"
+                      className="rounded-full bg-primary/10 p-1.5 group-hover:bg-primary/20 transition-colors duration-300"
                       initial={{ scale: 0.8, rotate: -5 }}
                       whileInView={{ scale: 1, rotate: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                     >
-                      <feature.icon className="h-6 w-6 text-primary" />
+                      <feature.icon className="h-5 w-5 text-primary" />
                     </motion.div>
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-600 text-lg">{feature.description}</p>
+                <CardContent className="space-y-3">
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                   <motion.div 
                     className="relative rounded-xl overflow-hidden shadow-md"
                     whileInView={{ 
@@ -158,7 +158,7 @@ export function Features() {
                     <img
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-[300px] object-cover rounded-xl transition-all duration-700 group-hover:scale-105 group-hover:brightness-105"
+                      className="w-full h-[200px] object-cover rounded-xl transition-all duration-700 group-hover:scale-105 group-hover:brightness-105"
                     />
                   </motion.div>
                 </CardContent>

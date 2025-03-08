@@ -47,19 +47,19 @@ export function Benefits() {
   };
 
   return (
-    <section ref={containerRef} className="w-full py-16 md:py-24 bg-white relative overflow-hidden">
+    <section ref={containerRef} className="w-full py-12 md:py-16 bg-white relative overflow-hidden">
       {/* Decorative elements that move on scroll */}
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-        className="absolute top-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-0 left-0 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
       />
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-        className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
+        className="absolute bottom-0 right-0 w-72 h-72 bg-purple-100/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"
       />
       
       <div className="container px-4 md:px-6 relative z-10">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
           <motion.div 
             style={{ y: imageY }}
             className="relative"
@@ -86,19 +86,19 @@ export function Benefits() {
           
           <motion.div 
             style={{ opacity: textOpacity, y: textY }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
-              className="space-y-4"
+              className="space-y-3"
             >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
                 Waarom kiezen voor onze leerdoelen monitor?
               </h2>
-              <p className="text-gray-500 md:text-lg">
+              <p className="text-gray-500 md:text-base">
                 Onze tool biedt alles wat je nodig hebt om de ontwikkeling van leerlingen effectief te volgen en te stimuleren.
               </p>
             </motion.div>
@@ -108,22 +108,22 @@ export function Benefits() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="grid gap-4 sm:grid-cols-2"
+              className="grid gap-3 sm:grid-cols-2"
             >
               {benefits.map((benefit, index) => (
                 <motion.li 
                   key={index} 
                   variants={itemVariants}
                   custom={index}
-                  className="flex items-center gap-3"
+                  className="flex items-center gap-2"
                 >
                   <motion.div 
                     whileHover={{ scale: 1.2, backgroundColor: 'rgba(37, 99, 235, 0.2)' }}
                     className="rounded-full bg-primary/10 p-1"
                   >
-                    <Check className="h-4 w-4 text-primary" />
+                    <Check className="h-3.5 w-3.5 text-primary" />
                   </motion.div>
-                  <span className="text-gray-700">{benefit}</span>
+                  <span className="text-gray-700 text-sm">{benefit}</span>
                 </motion.li>
               ))}
             </motion.ul>
