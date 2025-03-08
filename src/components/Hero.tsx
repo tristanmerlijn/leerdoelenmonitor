@@ -11,15 +11,10 @@ export function Hero() {
     offset: ["start start", "end start"]
   });
   
-  // Modified opacity transform to ensure dashboard stays visible longer
-  // Changed from [0, 0.5] to [0, 0.8] so it fades out more gradually
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  
-  // Reduced scale effect to be more subtle
-  const scale = useTransform(scrollYProgress, [0, 0.7], [1, 0.95]);
-  
-  // Reduced vertical movement during scroll
-  const y = useTransform(scrollYProgress, [0, 0.7], [0, 50]);
+  // Create scroll-driven animations
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   return (
     <section ref={targetRef} className="relative overflow-hidden bg-white min-h-[90vh] flex items-center">
