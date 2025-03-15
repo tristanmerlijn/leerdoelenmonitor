@@ -5,7 +5,7 @@ import { AnimateOnScroll } from "./AnimateOnScroll";
 export function Benefits() {
   const benefits = [
     "Real-time voortgangsmonitoring",
-    "Persoonlijke leerdoelen instellen",
+    "Hulpmiddel bij het differentiëren",
     "Automatische voortgangsrapporten",
     "Intuïtieve dashboards",
     "Data-gedreven inzichten",
