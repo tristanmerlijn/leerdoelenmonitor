@@ -27,7 +27,7 @@ export function Features() {
     {
       icon: Target,
       title: "Leerdoelen analyse",
-      description: "Stel persoonlijke leerdoelen en monitor de voortgang richting deze doelen.",
+      description: "Gebruik het overzicht om feedback te geven op de score.",
       image: "/lovable-uploads/501b644d-12cc-4fd5-a80b-0d1632abc9f3.png"
     },
     {
