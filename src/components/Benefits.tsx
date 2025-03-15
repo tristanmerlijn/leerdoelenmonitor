@@ -11,7 +11,7 @@ export function Benefits() {
     "Data-gedreven inzichten",
     "Eenvoudige implementatie",
     "Hulpmiddel bij gesprekken over leerdoelen",
-    "Feedback geven per leerdoel"
+    "Geef feedback op persoonlijke leerdoelen"
   ];
 
   return (
