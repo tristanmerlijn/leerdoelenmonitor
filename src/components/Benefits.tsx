@@ -6,7 +6,7 @@ export function Benefits() {
   const benefits = [
     "Real-time voortgangsmonitoring",
     "Hulpmiddel bij het differentiëren",
-    "Automatische voortgangsrapporten",
+    "Koppel leerdoelen aan weeknummers",
     "Intuïtieve dashboards",
     "Data-gedreven inzichten",
     "Eenvoudige implementatie",
