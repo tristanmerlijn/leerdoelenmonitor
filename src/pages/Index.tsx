@@ -11,11 +11,9 @@ const Index = () => {
       <Features />
       <Benefits />
       <Stats />
-      <footer className="py-6 bg-gray-50 border-t border-gray-100">
-        <div className="container mx-auto text-center text-sm text-gray-500">
-          © 2025 Tijmen Hulshoff. Alle rechten voorbehouden.
-        </div>
-      </footer>
+      <div className="container mx-auto text-center text-sm text-gray-500 py-6">
+        © 2025 Tijmen Hulshoff. Alle rechten voorbehouden.
+      </div>
     </div>
   );
 };
