@@ -19,7 +19,7 @@ export function Hero() {
                   Inzicht in leergroei
                 </h1>
                 <p className="text-lg text-gray-600 md:text-xl max-w-[600px]">
-                  Volg en begeleid de ontwikkeling van je leerlingen met onze innovatieve leerdoelen monitor. Ontworpen voor het moderne onderwijs.
+                  Volg en begeleid de ontwikkeling van je leerlingen met een innovatieve leerdoelen monitor. Ontworpen voor het moderne onderwijs.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">

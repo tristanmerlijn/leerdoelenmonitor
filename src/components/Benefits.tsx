@@ -35,10 +35,10 @@ export function Benefits() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Waarom kiezen voor onze leerdoelen monitor?
+                  Waarom kiezen voor leerdoelenmonitor.nl?
                 </h2>
                 <p className="text-gray-500 md:text-lg">
-                  Onze tool biedt alles wat je nodig hebt om de ontwikkeling van leerlingen effectief te volgen en te stimuleren.
+                  Deze tool biedt alles wat je nodig hebt om de ontwikkeling van leerlingen effectief te volgen en te stimuleren.
                 </p>
               </div>
               <ul className="grid gap-4 sm:grid-cols-2">

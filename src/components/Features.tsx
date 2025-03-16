@@ -52,7 +52,7 @@ export function Features() {
                 Alles wat je nodig hebt voor effectief onderwijs
               </h2>
               <p className="text-gray-500 md:text-lg lg:text-xl max-w-[600px] mx-auto">
-                Ontdek hoe onze tool het leerproces inzichtelijk en effectief maakt met deze essentiële functies
+                Ontdek hoe je het leerproces inzichtelijk en effectief maakt.
               </p>
             </div>
           </div>
