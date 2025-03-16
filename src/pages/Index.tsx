@@ -11,7 +11,7 @@ const Index = () => {
       <Features />
       <Benefits />
       <Stats />
-      <div className="container mx-auto text-center text-sm text-gray-500 py-6">
+      <div className="container mx-auto text-center text-sm text-gray-500 py-6 bg-white">
         © 2025 Tijmen Hulshoff. Alle rechten voorbehouden.
       </div>
     </div>
