@@ -15,7 +15,7 @@ export function Features() {
     {
       icon: Users,
       title: "Leerlingendashboard",
-      description: "Overzichtelijk dashboard met real-time inzichten in de voortgang van alle leerlingen.",
+      description: "Overzichtelijk dashboard met real-time inzichten in de voortgang.",
       image: "/lovable-uploads/e7a547eb-b759-4e8a-b613-fe70d3bab0f0.png"
     },
     {
@@ -27,13 +27,13 @@ export function Features() {
     {
       icon: Target,
       title: "Leerdoelen analyse",
-      description: "Gebruik het overzicht om feedback te geven op de score.",
+      description: "Geef feedback bij de score van een leerdoel.",
       image: "/lovable-uploads/501b644d-12cc-4fd5-a80b-0d1632abc9f3.png"
     },
     {
       icon: BookOpen,
       title: "Voortgang op leerdoelen",
-      description: "Gedetailleerd inzicht in de ontwikkeling van elke individuele leerling.",
+      description: "Gedetailleerd inzicht in de ontwikkeling van elke leerling.",
       image: "/lovable-uploads/a7d5a3d9-bf23-4ff0-80c0-72530af78090.png"
     }
   ];

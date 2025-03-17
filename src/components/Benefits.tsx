@@ -38,7 +38,7 @@ export function Benefits() {
                   Waarom kiezen voor leerdoelenmonitor.nl?
                 </h2>
                 <p className="text-gray-500 md:text-lg">
-                  Deze tool biedt alles wat je nodig hebt om de ontwikkeling van leerlingen effectief te volgen en te stimuleren.
+                  Stimuleer en volg de ontwikkeling op het beheersen van leerdoelen.
                 </p>
               </div>
               <ul className="grid gap-4 sm:grid-cols-2">
