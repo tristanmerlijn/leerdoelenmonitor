@@ -42,7 +42,7 @@ export function Hero() {
                   ))}
                 </div>
                 <p className="text-gray-600">
-                  Al in gebruik door 500+ docenten
+                  Al in gebruik door 3 docenten ;-)
                 </p>
               </div>
             </div>
