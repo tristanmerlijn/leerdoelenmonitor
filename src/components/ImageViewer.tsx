@@ -47,13 +47,13 @@ export function ImageViewer({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none transition-all duration-300 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
+        <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none transition-all duration-700 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95">
           <DialogTitle className="sr-only">{alt}</DialogTitle>
-          <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm transform transition-all duration-500 scale-100">
+          <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm transform transition-all duration-1000 scale-100">
             <img
               src={src}
               alt={alt}
-              className="w-full h-full object-contain max-h-[80vh] rounded transition-transform duration-500"
+              className="w-full h-full object-contain max-h-[80vh] rounded transition-transform duration-1000"
             />
             <DialogDescription className="sr-only">Full size view of {alt}</DialogDescription>
           </div>
