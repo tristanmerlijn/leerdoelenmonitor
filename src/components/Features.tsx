@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Users, BarChart2, Target, CheckCircle2, LucideIcon } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
+import { ImageViewer } from "./ImageViewer";
 
 interface Feature {
   icon: LucideIcon;
@@ -74,10 +75,11 @@ export function Features() {
                   <p className="text-gray-600 text-lg">{feature.description}</p>
                   <div className="relative rounded-xl overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <img
+                    <ImageViewer
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-[300px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-[300px]"
+                      imageClassName="object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </CardContent>

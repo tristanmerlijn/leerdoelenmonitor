@@ -1,6 +1,7 @@
 
 import { Check } from "lucide-react";
 import { AnimateOnScroll } from "./AnimateOnScroll";
+import { ImageViewer } from "./ImageViewer";
 
 export function Benefits() {
   const benefits = [
@@ -23,10 +24,10 @@ export function Benefits() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl blur-2xl" />
               <div className="relative aspect-video rounded-2xl border bg-white/50 backdrop-blur-sm shadow-xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10" />
-                <img
+                <ImageViewer
                   src="/lovable-uploads/936ffdb2-0d2b-4c0d-9fc9-76c813f8a8c2.png"
                   alt="Platform Overview"
-                  className="object-cover w-full h-full"
+                  className="w-full h-full"
                 />
               </div>
             </div>
