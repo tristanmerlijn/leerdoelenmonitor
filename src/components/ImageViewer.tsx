@@ -57,24 +57,33 @@ export function ImageViewer({
             <img
               src={src}
               alt={alt}
-              className="w-full h-full object-contain max-h-[80vh] rounded shadow-2xl 
-                transition-all duration-1000 data-[state=open]:opacity-100 data-[state=closed]:opacity-0"
+              className={cn(
+                "w-full h-full object-contain max-h-[80vh] rounded shadow-2xl",
+                "transition-all duration-1000 data-[state=open]:opacity-100 data-[state=closed]:opacity-0",
+                "animate-image-entrance"
+              )}
               style={{
-                transformOrigin: 'center',
-                animation: isOpen ? 'imageEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1)' : 'none'
+                transformOrigin: 'center'
               }}
             />
-            <style jsx global>{`
-              @keyframes imageEntrance {
-                0% { opacity: 0; transform: scale(0.8) translateY(30px); }
-                40% { opacity: 1; }
-                100% { opacity: 1; transform: scale(1) translateY(0); }
-              }
-            `}</style>
             <DialogDescription className="sr-only">Full size view of {alt}</DialogDescription>
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* We need to add this style element for the keyframe animation, but without the jsx prop */}
+      <style>
+        {`
+          @keyframes imageEntrance {
+            0% { opacity: 0; transform: scale(0.8) translateY(30px); }
+            40% { opacity: 1; }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+          }
+          .animate-image-entrance {
+            animation: ${isOpen ? 'imageEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1)' : 'none'};
+          }
+        `}
+      </style>
     </>
   );
 }
