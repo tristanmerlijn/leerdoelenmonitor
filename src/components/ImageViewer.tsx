@@ -20,6 +20,7 @@ export function ImageViewer({
 }: ImageViewerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const getAspectRatioClass = () => {
     switch (aspectRatio) {
@@ -35,11 +36,38 @@ export function ImageViewer({
   };
 
   const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    setIsOpen(false);
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300); // Add a small delay before closing
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Add event listeners for the dialog content to prevent flickering
+  const handleDialogMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleDialogMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300);
   };
 
   return (
@@ -58,8 +86,13 @@ export function ImageViewer({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none">
+        <DialogContent 
+          className="w-full max-w-4xl p-0 bg-transparent border-none"
+          onMouseEnter={handleDialogMouseEnter}
+          onMouseLeave={handleDialogMouseLeave}
+        >
           <DialogTitle className="sr-only">{alt}</DialogTitle>
+          <DialogDescription className="sr-only">Image preview</DialogDescription>
           <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm">
             <img
               src={src}
