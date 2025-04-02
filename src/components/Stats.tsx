@@ -1,6 +1,3 @@
-
-import { ImageViewer } from "./ImageViewer";
-
 export const Stats = () => {
   return (
     <div className="bg-primary py-24 sm:py-32">
@@ -30,14 +27,6 @@ export const Stats = () => {
             ))}
           </dl>
         </div>
-      </div>
-      <div className="mt-16 flex justify-center">
-        <ImageViewer 
-          src="/lovable-uploads/c2bdd2cd-0390-4a05-a389-d19bd999edb0.png" 
-          alt="Leerlingen die nog moeite hebben" 
-          className="max-w-xl w-full rounded-lg shadow-lg"
-          aspectRatio="video"
-        />
       </div>
     </div>
   );
