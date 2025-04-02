@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogOverlay, DialogTitle } from "@/components/ui/dialog";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
 
 interface ImageViewerProps {
@@ -18,8 +18,6 @@ export function ImageViewer({
   imageClassName,
   aspectRatio = "auto",
 }: ImageViewerProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const getAspectRatioClass = () => {
     switch (aspectRatio) {
       case "square":
@@ -34,30 +32,25 @@ export function ImageViewer({
   };
 
   return (
-    <>
-      <div 
-        className={cn("cursor-pointer transition-all hover:opacity-90 hover:scale-[1.01] relative", className)} 
-        onClick={() => setIsOpen(true)}
-      >
+    <HoverCard openDelay={100} closeDelay={300}>
+      <HoverCardTrigger asChild>
+        <div 
+          className={cn("cursor-pointer transition-all hover:opacity-90 hover:scale-[1.01] relative", className)}
+        >
+          <img
+            src={src}
+            alt={alt}
+            className={cn("w-full h-full object-cover", getAspectRatioClass(), imageClassName)}
+          />
+        </div>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-auto max-w-4xl p-1 bg-white/10 backdrop-blur-sm rounded-lg border-none shadow-xl">
         <img
           src={src}
           alt={alt}
-          className={cn("w-full h-full object-cover", getAspectRatioClass(), imageClassName)}
+          className="w-full h-full object-contain max-h-[80vh] rounded"
         />
-      </div>
-
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none">
-          <DialogTitle className="sr-only">{alt}</DialogTitle>
-          <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm">
-            <img
-              src={src}
-              alt={alt}
-              className="w-full h-full object-contain max-h-[80vh] rounded"
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
-    </>
+      </HoverCardContent>
+    </HoverCard>
   );
 }
