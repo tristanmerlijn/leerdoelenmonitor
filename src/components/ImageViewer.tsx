@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogOverlay, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 interface ImageViewerProps {
@@ -36,7 +36,7 @@ export function ImageViewer({
   return (
     <>
       <div 
-        className={cn("cursor-pointer transition-all hover:opacity-90 hover:scale-[1.01]", className)} 
+        className={cn("cursor-pointer transition-all hover:opacity-90 hover:scale-[1.01] relative", className)} 
         onClick={() => setIsOpen(true)}
       >
         <img
@@ -48,6 +48,7 @@ export function ImageViewer({
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none">
+          <DialogTitle className="sr-only">{alt}</DialogTitle>
           <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm">
             <img
               src={src}
