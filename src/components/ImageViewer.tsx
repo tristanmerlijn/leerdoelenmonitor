@@ -1,6 +1,6 @@
 
-import React, { useState, useRef, useEffect } from "react";
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import React, { useState } from "react";
+import { Dialog, DialogContent, DialogOverlay, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 interface ImageViewerProps {
@@ -19,9 +19,7 @@ export function ImageViewer({
   aspectRatio = "auto",
 }: ImageViewerProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
+
   const getAspectRatioClass = () => {
     switch (aspectRatio) {
       case "square":
@@ -35,48 +33,11 @@ export function ImageViewer({
     }
   };
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 300); // Add a small delay before closing
-  };
-
-  // Clean up timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
-  // Add event listeners for the dialog content to prevent flickering
-  const handleDialogMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleDialogMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 300);
-  };
-
   return (
     <>
       <div 
-        ref={imageRef}
         className={cn("cursor-pointer transition-all hover:opacity-90 hover:scale-[1.01] relative", className)} 
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onClick={() => setIsOpen(true)}
       >
         <img
           src={src}
@@ -86,13 +47,8 @@ export function ImageViewer({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent 
-          className="w-full max-w-4xl p-0 bg-transparent border-none"
-          onMouseEnter={handleDialogMouseEnter}
-          onMouseLeave={handleDialogMouseLeave}
-        >
+        <DialogContent className="w-full max-w-4xl p-0 bg-transparent border-none">
           <DialogTitle className="sr-only">{alt}</DialogTitle>
-          <DialogDescription className="sr-only">Image preview</DialogDescription>
           <div className="p-1 bg-white/10 rounded-lg backdrop-blur-sm">
             <img
               src={src}
